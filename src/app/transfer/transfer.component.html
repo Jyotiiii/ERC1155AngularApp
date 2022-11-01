@@ -1,0 +1,102 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <form [formGroup]="transferForm"  id="transferForm">
+  <body>
+      <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+          <div class="wrapper wrapper--w790">
+              <div class="card card-5">
+                  <div class="card-heading">
+                      <h2 class="title">Transfer Form</h2>
+                  </div>
+                  <div class="card-body">
+                      <div class="form-row m-b-55">
+                         <div class="name">sender</div> 
+                           <div class="value">
+                              <div class="input-group">
+                                  <input class="input--style-5" type="text" name="sender" formControlName="sender"> 
+                              </div>
+                          </div>
+                      </div>
+                     
+                     
+                        <div class="form-row m-b-55">
+                           <div class="name">receiver</div> 
+                             <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="receiver" formControlName="receiver"> 
+                                </div>
+                            </div>
+                        </div>
+                      
+                      <div class="form-row m-b-55">
+                              <div class="row row-space">
+                              <div formArrayName="ids" >
+                              <button style='display:flex' type="button" (click)="addId()">+</button>
+                              <div *ngFor="let name of ids.controls; let i=index" class="col"style='display:flex;'>
+                                  <label for="defaultRegisterFormid-{{ i }}"><div class="name">Property ID:</div></label>
+                                  <div class="value">
+                                      <div class="input-group">
+                                  <input class="input--style-5" id="defaultRegisterFormid-{{ i }}" type="text" [formControlName]="i">
+                                </div>
+                              <!-- <div class="name">Company</div> -->
+                              <!-- <div class="value">
+                                  <div class="input-group">
+                                      <input class="input--style-5" type="text" name="names"> -->
+                                  </div>
+                              </div>
+                              </div>
+                              </div>
+                          </div>
+                          <div class="form-row m-b-55">
+                              <div class="row row-space">
+                              <div formArrayName="values" >
+                              <button style='display:flex' type="button" (click)="addValue()">+</button>
+                              <div *ngFor="let name of values.controls; let i=index" class="col"style='display:flex;'>
+                                  <label for="defaultRegisterFormvalue-{{ i }}"><div class="name">No of Tokens:</div></label>
+                                  <div class="value">
+                                      <div class="input-group">
+                                  <input class="input--style-5" id="defaultRegisterFormvalue-{{ i }}" type="text" [formControlName]="i">
+                                </div>
+                              <!-- <div class="name">Company</div> -->
+                              <!-- <div class="value">
+                                  <div class="input-group">
+                                      <input class="input--style-5" type="text" name="names"> -->
+                                  </div>
+                              </div>
+                              </div>
+                              </div>
+                          </div>
+                          
+                       <div>
+                              <button class="btn btn--radius-2 btn--red" (click)="onSubmit()" type="submit">transfer</button>
+                              &nbsp;
+                              <button class="btn btn--radius-2 btn--red"><a [routerLink]="['/MultipleReceipienttrans']" style="color:aliceblue">GO to Partial Transfer</a> </button>
+
+                            </div>
+
+                          <!-- <button   class="btn btn-success">  <a style="color:black" [routerLink]="['transfer']">GO to transfer</a> </button> -->
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!-- Jquery JS-->
+      <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+      <!-- Vendor JS-->
+      <!-- <script src="vendor/select2/select2.min.js"></script>
+      <script src="vendor/datepicker/moment.min.js"></script>
+      <script src="vendor/datepicker/daterangepicker.js"></script> -->
+  
+      <!-- Main JS-->
+      <!-- <script src="js/global.js"></script> -->
+  
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+  </form>>
+  
+  </html>
+  <!-- end document-->
+  
